@@ -1,8 +1,9 @@
-import {defineConfig} from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import vitePluginInjectDataLocator from "./plugins/vite-plugin-inject-data-locator";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/learning-platform/" : "/",
   plugins: [react(), vitePluginInjectDataLocator()],
   server: {
     proxy: {
@@ -13,4 +14,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
