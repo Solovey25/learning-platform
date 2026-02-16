@@ -26,7 +26,7 @@ import { AssignmentDetails } from "./pages/assignment-details";
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <AuthProvider>
         <Switch>
           <Route exact path="/login" component={Login} />
