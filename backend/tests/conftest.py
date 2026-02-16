@@ -1,10 +1,16 @@
 import os
+import sys
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 
 os.environ.setdefault("SECRET_KEY", "test_secret_key")
 
@@ -99,4 +105,3 @@ def user_token(client, regular_user):
         data={"username": regular_user.email, "password": "testpass123"},
     )
     return response.json()["access_token"]
-
