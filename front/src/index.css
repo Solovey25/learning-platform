@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-slate-950 text-slate-50 antialiased;
+}
+
+.course-content h1 {
+  @apply text-2xl font-semibold mb-4;
+}
+
+.course-content h2 {
+  @apply text-xl font-medium mb-3;
+}
+
+.course-content p {
+  @apply mb-4 leading-relaxed text-slate-200;
+}
+
+.course-content ul {
+  @apply list-disc pl-5 mb-4 space-y-2;
+}
+
+.course-content li {
+  @apply mb-2;
+}
